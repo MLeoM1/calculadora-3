@@ -1,0 +1,377 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+a:link { text-decoration: none;
+}
+a:visited {
+text-decoration: none;
+}
+.navbar {
+    background-color: #edeeee; 
+}
+.navbar .bold1:hover {
+    color: #3B413C;
+    font-weight: bold; 
+}
+.navbar .logo {
+    height: 75px; 
+}
+.navbar .logo:hover {
+    transform: scale(1.05);
+    border: #a2e3c4 solid 1px; 
+}
+.navbar-nav{
+    display: flex;
+    align-items: center;
+}
+.separador-1{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-icono svg {
+    width: 50px;
+    height: 35px;
+    color: #198754;
+}
+.contenedor-icono2 svg{
+    width: 50px;
+    height: 20px;
+    color: #198754;
+}
+
+.boton-volver{
+    background-color: transparent;
+    border: 0;
+}
+
+.boton-menu{
+    background-color: transparent;
+    border: 0;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    gap: 1rem;
+    font-weight: 500;
+    display: flex;
+    padding: 1rem;
+    
+
+}
+
+.boton-modo{
+    border: 0;
+    background-color: transparent;
+}
+
+.boton-menu.active::before{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0 1rem 0 rgb(255, 255, 255);
+}
+
+.boton-menu.active::after{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: .5rem;
+    box-shadow: 0 -1rem 0 rgb(255, 255, 255);
+}
+
+.boton-menu.active{
+    background-color: #ffffff;
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: #a2e3c4;
+}
+
+aside{
+    padding: 2rem;
+    padding-right: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+main{
+    background-color: #ffffff;
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.texto-titulo{
+    color: #198754;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* CSS DEL MODO OSCURO */
+
+.switchDark{
+    background-color: #3494b1;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.switchDark span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color: #fff;
+    background: none;
+}
+.switchDark::after{
+    display: block;
+    background: #fffbf5;
+    width: 1.8rem;
+    height: 1.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 50%;
+    transition: all .5s ease;
+    box-shadow: 0 0 1.5px 1.5px rgba(0, 0, 0, 0.5);
+    content: "";
+}
+.switchDark.active{
+    background: #fdd384;
+}
+.switchDark.active::after{
+    left: unset;
+    right: 0;
+}
+
+body.dark{
+    background: rgb(27, 23, 23);
+    color: #fff;
+}
+main.dark{
+    background-color: #79c9a2;
+    margin-left: 1rem;
+}
+.texto-footer{
+    padding: 2rem;
+}
+
+
+/* CSS DEL JUEGO PIEDRA, PAPEL O TIJERA */
+.juego{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem;
+    text-align: center;
+}
+.marcador{
+    background-color: #a2e3c4;
+    position: relative;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    color: #198754;
+}
+.marcador .nombre{
+    position: absolute;
+    color: black;
+    background-color: #ffffff;
+    line-height: 1;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 2px solid #198754;
+}
+.marcador .nombre-usuario{
+    right: 85%;
+}
+.marcador .nombre-computadora{
+    left:85%;
+}
+.marcador .puntos{
+    font-size: 1.5rem;
+}
+.seleccion{
+    margin-bottom: 2rem;
+}
+.objetos{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.objeto1{
+    background-color: #977356;
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.objeto2{
+    background-color: #b8b3b2;
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.objeto3{
+    background-color: #91d4d4;
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}    
+
+.objeto1 svg {
+    width: 50px;
+    height: 50px;
+    color: #532b18;
+}
+.objeto2 svg {
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+}
+.objeto3 svg {
+    width: 50px;
+    height: 50px;
+    color: #1d2222;
+}
+.mensaje{
+    margin-bottom: 2rem;
+    line-height: 1,5;
+}
+.mensaje .eleccion{
+    color: #198754;
+    background-color: #a2e3c4;
+    border-radius: .25rem;
+    padding-inline: .25rem;
+}
+.boton-juego{
+    border: 0;
+    background-color: #198754;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 1rem solid rgb(255, 255, 255);
+    padding: 1rem;
+    font-weight: 500;
+}
+
+.disabled{
+    display: none;
+}
+
+
+/* CSS DE LA CALCULADORA */
+
+
+.container-calculadora{
+    width: 400px;
+    padding: 20px;
+    margin: 10px auto;
+    background-color: #0d1321;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.buttons{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4,100px);
+}
+.buttons > button{
+    cursor: pointer;
+    font-size: 50px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #a2e3c4;
+    color: #3a4641;
+}
+.output{
+    background-color: #79c9a2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}
+.output .display{
+    width: 370px;
+    height: 95px;
+    font-size: 100px;
+    font-family: 'Gugi', cursive;
+    text-align: right;
+    border: none;
+    outline: none;
+    background-color: #a2e3c4;
+    color: #000;
+}
+.delete{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-right: 10px;
+    margin: 5px 0;
+    color: #fff;
+}
+.delete > button{
+    width: 95px;
+    cursor: pointer;
+    font-size: 50px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #e03045;
+    color: #fff;
+}
+.delete > button:hover{
+    background-color: #e03045;
+}
+.buttons > button:hover{
+    background-color: #8cac9d;
+}
+
