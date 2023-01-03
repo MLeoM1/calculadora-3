@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego</title>
+    <title>Pokedex</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../images/mlemo-logo.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -52,9 +52,11 @@
         <aside>
             <div class="separador-1">
                 <ul>
-                    <li class="contenedor-icono2"><button class="active boton-menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
-                        <path d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
-                        </svg>Piedra, papel o tijera</button>
+                    <li class="contenedor-icono2 active"><button class="boton-menu active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/>
+                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                        </svg>Pokedex</button>
                     </li>
                 </ul>
             </div>
@@ -68,56 +70,54 @@
             </div>
         </aside>
         <main>
-            <div class="juego">
-                <h3 class="texto-titulo">Piedra, papel o tijera</h3>
-                <p class="instrucciones" id="instrucciones">
-                    El primero en llegar a 5 puntos gana la partida.
-                </p>
-                <div class="marcador">
-                    <p class="nombre nombre-usuario">Jugador</p>
-                    <p class="nombre nombre-computadora">Computadora</p>
-                    <p class="puntos">
-                        <span id="puntos-usuario">0</span>
-                        <span>-</span>
-                        <span id="puntos-computadora">0</span>
-                    </p>
-                </div>
-                <div class="seleccion" id="seleccion">
-                    <h2>Elegí el objeto para el próximo turno</h2>
-                    <div class="objetos">
-                        <button class="objeto1 todosObjetos" id="piedra"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pentagon" viewBox="0 0 16 16">
-                            <path d="M7.685 1.545a.5.5 0 0 1 .63 0l6.263 5.088a.5.5 0 0 1 .161.539l-2.362 7.479a.5.5 0 0 1-.476.349H4.099a.5.5 0 0 1-.476-.35L1.26 7.173a.5.5 0 0 1 .161-.54l6.263-5.087Zm8.213 5.28a.5.5 0 0 0-.162-.54L8.316.257a.5.5 0 0 0-.631 0L.264 6.286a.5.5 0 0 0-.162.538l2.788 8.827a.5.5 0 0 0 .476.349h9.268a.5.5 0 0 0 .476-.35l2.788-8.826Z"/>
-                            </svg></button>
-                        <button class="objeto2 todosObjetos" id="papel"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
-                            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-                            </svg></button>
-                        <button class="objeto3 todosObjetos" id="tijera"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
-                            <path d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
-                            </svg></button>
-                    </div>
-                </div>
-                <div class="mensaje disabled" id="mensaje">
-                    <p>
-                        Usaste <span class="eleccion" id="eleccion-usuario">papel</span><br>
-                        computadora usó <span class="eleccion" id="eleccion-computadora">piedra</span>
-                    </p>
-                    <p id="gana-punto">¡Ganaste un punto!</p>
-                </div>
-                <button class="boton-juego disabled" id="reiniciar"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                    </svg> Reiniciar partida</button>
+            <div class="container-pokedex">
+                <ul class="lista-tipo">
+                    <li class="item"><button class="boton-tipo" id="ver-todos">Todos</button></li>
+                    <li class="item"><button class="boton-tipo normal" id="normal">Normal</button></li>
+                    <li class="item"><button class="boton-tipo fire" id="fire">Fire</button></li>
+                    <li class="item"><button class="boton-tipo water" id="water">Water</button></li>
+                    <li class="item"><button class="boton-tipo grass" id="grass">Grass</button></li>
+                    <li class="item"><button class="boton-tipo electric" id="electric">Electric</button></li>
+                    <li class="item"><button class="boton-tipo ice" id="ice">Ice</button></li>
+                    <li class="item"><button class="boton-tipo fighting" id="fighting">Fighting</button></li>
+                    <li class="item"><button class="boton-tipo poison" id="poison">Poison</button></li>
+                    <li class="item"><button class="boton-tipo ground" id="ground">Ground</button></li>
+                    <li class="item"><button class="boton-tipo flying" id="flying">Flying</button></li>
+                    <li class="item"><button class="boton-tipo psychic" id="psychic">Psichic</button></li>
+                    <li class="item"><button class="boton-tipo bug" id="bug">Bug</button></li>
+                    <li class="item"><button class="boton-tipo rock" id="rock">Rock</button></li>
+                    <li class="item"><button class="boton-tipo ghost" id="ghost">Ghost</button></li>
+                    <li class="item"><button class="boton-tipo dragon" id="dragon">Dragon</button></li>
+                    <li class="item"><button class="boton-tipo dark" id="dark">Dark</button></li>
+                    <li class="item"><button class="boton-tipo steel" id="steel">Steel</button></li>
+                    <li class="item"><button class="boton-tipo fairy" id="fairy">Fairy</button></li>
+                </ul>
             </div>
-            <div>
-                <form>
-                    <div class="mb-3 nombre-registro">
-                        <label class="form-label nombre-color">Borrar jugador:<p class="nombre-jugador"></p></label>
-                        <button type="submit" class="btn btn-danger boton-salir" id="salir">Borrar</button>
-                    </div>
-                </form>
+            <div class="todos" id="todos">
+                <div class="pokemon-todos" id="listaPokemon">
+                    <!-- <div class="pokemon">
+                        <div pokemon-imagen>
+                            <img src="" alt="">
+                        </div>
+                        <div class="pokemon-info">
+                            <div class="nombre-contendor">
+                                <p class="pokemon-id"></p>
+                                <h2 class="pokemon-nombre"></h2>
+                            </div>
+                        </div> 
+                        <div class="pokemon-tipo">
+                            <p class="tipo"></p>
+                            <p class="tipo"></p>
+                        </div>
+                        <div class="pokemon-stats">
+                            <p class="stat"></p>
+                            <p class="stat"></p>
+                        </div> -->
+                    </div> 
+                </div>
             </div>
         </main>
     </div>
-    <script src="../scripts/mi-archivo.js"></script>
+    <script src="../scripts/mi-archivo-4.js"></script>
 </body>
 </html>

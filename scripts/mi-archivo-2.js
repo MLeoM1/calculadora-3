@@ -82,6 +82,3 @@ function clear() {
 function updateDisplay() {
     result.value = operationActual;
 }
-
-localStorage.setItem('calculo')
-localStorage.setItem('clear')

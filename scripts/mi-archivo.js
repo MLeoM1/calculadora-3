@@ -96,3 +96,28 @@ function reiniciarJuego() {
 
     instrucciones.innerText = "El primero en llegar a 5 puntos gana."
 }
+
+
+
+const jugador = document.getElementById(`#jugador-registrado`)
+const salirBoton = document.querySelector(`#salir`)
+
+const verUsuario = () => {
+
+    let jugadorLS = localStorage.getItem('jugador')
+    let jugador = ''
+
+    if (jugadorLS) {
+    jugador = jugadorLS
+    } else {
+        jugador = prompt('Ingrese un nombre para el juego:')
+        localStorage.setItem('jugador', jugador)
+        alert("Bienvenido: " + jugador);
+    }
+}
+
+verUsuario ()
+
+salirBoton.addEventListener('click', () => {
+    localStorage.removeItem('jugador')
+})
